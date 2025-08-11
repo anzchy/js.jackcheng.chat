@@ -4,7 +4,7 @@ const withMDX = createMDX();
 
 // 根据部署环境动态设置 basePath
 const isCustomDomain = process.env.CUSTOM_DOMAIN === 'true';
-const basePath = isCustomDomain ? '' : '/js.jackcheng.chat';
+const basePath = isCustomDomain ? '' : '/langshift';
 
 /** @type {import('next').NextConfig} */
 const config = {
