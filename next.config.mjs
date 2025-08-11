@@ -2,6 +2,10 @@ import { createMDX } from 'fumadocs-mdx/next';
 
 const withMDX = createMDX();
 
+// 根据部署环境动态设置 basePath
+const isCustomDomain = process.env.CUSTOM_DOMAIN === 'true';
+const basePath = isCustomDomain ? '' : '/langshift-python-js';
+
 /** @type {import('next').NextConfig} */
 const config = {
   reactStrictMode: true,
@@ -11,8 +15,8 @@ const config = {
   trailingSlash: true,
   skipTrailingSlashRedirect: true,
   distDir: 'out',
-  basePath: '/langshift-python-js',
-  assetPrefix: '/langshift-python-js',
+  basePath: basePath,
+  assetPrefix: basePath,
   
   // 图片优化配置
   images: {
