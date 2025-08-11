@@ -324,3 +324,5 @@ sayhello();`
 ## 如何部署
 
 自定义了 workflow 用于自动化部署。
+
+尽量不要使用 GitHub自带的 next.js。
