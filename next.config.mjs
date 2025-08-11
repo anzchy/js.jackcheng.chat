@@ -6,6 +6,12 @@ const withMDX = createMDX();
 const config = {
   reactStrictMode: true,
   
+  // GitHub Pages 静态导出配置
+  output: 'export',
+  trailingSlash: true,
+  skipTrailingSlashRedirect: true,
+  distDir: 'out',
+  
   // 图片优化配置
   images: {
     formats: ['image/webp', 'image/avif'],
