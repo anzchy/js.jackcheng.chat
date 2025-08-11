@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import logo from '@/public/favicon.ico';
+
 import { useRouter } from 'next/navigation';
 
 export function Logo() {
@@ -13,7 +13,7 @@ export function Logo() {
         router.push('/');
       }}
     >
-      <Image src={logo} alt="langShift" width={24} height={24} />
+      <Image src="/favicon.ico" alt="langShift" width={24} height={24} />
       langShift
     </div>
   );

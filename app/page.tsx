@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function SimplePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
@@ -12,7 +14,7 @@ export default function SimplePage() {
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            <a className="group block" href="/en/docs/js2py">
+            <Link className="group block" href="/en/docs/js2py">
               <div className="relative overflow-hidden bg-green-500/10 border-green-500/20 border backdrop-blur-sm rounded-3xl p-8 hover:scale-105 transition-all duration-500">
                 <div className="absolute top-4 left-4 z-20">
                   <div className="inline-flex items-center px-3 py-1 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full">
@@ -73,8 +75,8 @@ export default function SimplePage() {
                   </div>
                 </div>
               </div>
-            </a>
-            <a className="group block" href="/en/docs/py2js">
+            </Link>
+            <Link className="group block" href="/en/docs/py2js">
               <div className="relative overflow-hidden bg-yellow-500/10 border-yellow-500/20 border backdrop-blur-sm rounded-3xl p-8 hover:scale-105 transition-all duration-500">
                 <div className="absolute top-4 left-4 z-20">
                   <div className="inline-flex items-center px-3 py-1 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full">
@@ -132,7 +134,7 @@ export default function SimplePage() {
                   </div>
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

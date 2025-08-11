@@ -1,5 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+export const dynamic = 'force-static';
+
+export async function generateStaticParams() {
+  return [
+    { lang: 'en' },
+    { lang: 'zh-cn' },
+    { lang: 'zh-tw' }
+  ];
+}
+
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ lang: string }> }
