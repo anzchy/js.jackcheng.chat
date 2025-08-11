@@ -11,6 +11,8 @@ const config = {
   trailingSlash: true,
   skipTrailingSlashRedirect: true,
   distDir: 'out',
+  basePath: '/langshift-python-js',
+  assetPrefix: '/langshift-python-js',
   
   // 图片优化配置
   images: {
