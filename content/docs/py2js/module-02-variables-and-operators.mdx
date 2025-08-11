@@ -1,0 +1,311 @@
+---
+title: "Variables and Operators in JavaScript"
+description: "Learn JavaScript variables, data types, and operators from a Python developer's perspective, with direct comparisons and practical examples."
+---
+
+## 1. Variable Declaration
+
+### Python vs JavaScript Variable Declaration
+
+**Python:**
+```python
+# Python - Simple assignment
+name = "Alice"
+age = 25
+is_student = True
+
+# Variables can be reassigned
+name = "Bob"
+age = 30
+```
+
+**JavaScript:**
+```javascript
+// JavaScript - Explicit declaration keywords
+const name = "Alice";     // Cannot be reassigned
+let age = 25;             // Can be reassigned
+var isStudent = true;     // Legacy, avoid using
+
+// Reassignment
+// name = "Bob";          // Error! const cannot be reassigned
+age = 30;                 // OK with let
+```
+
+### Variable Declaration Keywords
+
+| Keyword | Reassignable | Block Scoped | Hoisted | When to Use |
+|---------|--------------|--------------|---------|-------------|
+| `const` | ❌ No | ✅ Yes | ❌ No | Default choice, immutable binding |
+| `let` | ✅ Yes | ✅ Yes | ❌ No | When you need to reassign |
+| `var` | ✅ Yes | ❌ No | ✅ Yes | Legacy, avoid in modern code |
+
+## 2. Data Types Comparison
+
+### Primitive Types
+
+**Python:**
+```python
+# Python data types
+text = "Hello"           # str
+number = 42              # int
+float_num = 3.14         # float
+is_true = True           # bool
+nothing = None           # NoneType
+```
+
+**JavaScript:**
+```javascript
+// JavaScript data types
+const text = "Hello";        // string
+const number = 42;           // number
+const floatNum = 3.14;       // number (same as integer)
+const isTrue = true;         // boolean
+const nothing = null;        // null
+const undefined = undefined; // undefined (unique to JS)
+```
+
+### Type Checking
+
+**Python:**
+```python
+print(type(42))          # <class 'int'>
+print(isinstance(42, int))  # True
+```
+
+**JavaScript:**
+```javascript
+console.log(typeof 42);           // "number"
+console.log(Number.isInteger(42)); // true
+```
+
+## 3. Operators
+
+### Arithmetic Operators
+
+| Operation | Python | JavaScript | Notes |
+|-----------|--------|------------|---------|
+| Addition | `+` | `+` | Same |
+| Subtraction | `-` | `-` | Same |
+| Multiplication | `*` | `*` | Same |
+| Division | `/` | `/` | Python: float result, JS: number |
+| Floor Division | `//` | `Math.floor(a/b)` | Different syntax |
+| Modulo | `%` | `%` | Same |
+| Exponentiation | `**` | `**` | Same (ES2016+) |
+
+**Examples:**
+```python
+# Python
+result = 10 / 3      # 3.3333...
+floor_div = 10 // 3  # 3
+power = 2 ** 3       # 8
+```
+
+```javascript
+// JavaScript
+const result = 10 / 3;              // 3.3333...
+const floorDiv = Math.floor(10 / 3); // 3
+const power = 2 ** 3;               // 8
+```
+
+### Comparison Operators
+
+**Python:**
+```python
+# Python - Straightforward comparisons
+print(5 == 5)    # True
+print(5 == "5")  # False (no type coercion)
+print(5 is 5)    # True (identity)
+```
+
+**JavaScript:**
+```javascript
+// JavaScript - Two types of equality
+console.log(5 == 5);    // true
+console.log(5 == "5");  // true (type coercion!)
+console.log(5 === "5"); // false (strict equality)
+console.log(5 === 5);   // true
+```
+
+### Logical Operators
+
+| Operation | Python | JavaScript |
+|-----------|--------|-----------|
+| AND | `and` | `&&` |
+| OR | `or` | `\|\|` |
+| NOT | `not` | `!` |
+
+**Examples:**
+```python
+# Python
+result = True and False  # False
+result = True or False   # True
+result = not True        # False
+```
+
+```javascript
+// JavaScript
+const result1 = true && false;  // false
+const result2 = true || false;  // true
+const result3 = !true;          // false
+```
+
+## 4. String Operations
+
+### String Formatting
+
+**Python:**
+```python
+name = "Alice"
+age = 25
+
+# f-strings (preferred)
+message = f"Hello, {name}! You are {age} years old."
+
+# .format() method
+message = "Hello, {}! You are {} years old.".format(name, age)
+```
+
+**JavaScript:**
+```javascript
+const name = "Alice";
+const age = 25;
+
+// Template literals (preferred)
+const message = `Hello, ${name}! You are ${age} years old.`;
+
+// String concatenation
+const message2 = "Hello, " + name + "! You are " + age + " years old.";
+```
+
+### String Methods
+
+**Python:**
+```python
+text = "Hello World"
+print(text.lower())      # "hello world"
+print(text.upper())      # "HELLO WORLD"
+print(text.split())      # ["Hello", "World"]
+print(len(text))         # 11
+```
+
+**JavaScript:**
+```javascript
+const text = "Hello World";
+console.log(text.toLowerCase());  // "hello world"
+console.log(text.toUpperCase());  // "HELLO WORLD"
+console.log(text.split(" "));     // ["Hello", "World"]
+console.log(text.length);         // 11
+```
+
+## 5. Type Conversion
+
+### Explicit Conversion
+
+**Python:**
+```python
+# Python type conversion
+num_str = "42"
+num = int(num_str)       # 42
+float_num = float(num_str)  # 42.0
+str_num = str(42)        # "42"
+bool_val = bool(1)       # True
+```
+
+**JavaScript:**
+```javascript
+// JavaScript type conversion
+const numStr = "42";
+const num = parseInt(numStr);     // 42
+const floatNum = parseFloat(numStr); // 42
+const strNum = String(42);        // "42"
+const boolVal = Boolean(1);       // true
+
+// Alternative methods
+const num2 = Number(numStr);      // 42
+const num3 = +numStr;             // 42 (unary plus)
+```
+
+### Implicit Conversion (JavaScript Only)
+
+```javascript
+// JavaScript automatic type coercion
+console.log("5" + 3);     // "53" (string concatenation)
+console.log("5" - 3);     // 2 (numeric subtraction)
+console.log("5" * 3);     // 15 (numeric multiplication)
+console.log(!"hello");    // false (truthy string becomes false)
+```
+
+## 6. Best Practices
+
+### Variable Naming
+
+**Python:**
+```python
+# Python - snake_case
+user_name = "alice"
+max_retry_count = 3
+is_valid_email = True
+```
+
+**JavaScript:**
+```javascript
+// JavaScript - camelCase
+const userName = "alice";
+const maxRetryCount = 3;
+const isValidEmail = true;
+```
+
+### Modern JavaScript Recommendations
+
+1. **Use `const` by default**, `let` when reassignment is needed
+2. **Avoid `var`** - it has confusing scoping rules
+3. **Use strict equality (`===`)** instead of loose equality (`==`)
+4. **Use template literals** for string interpolation
+5. **Be aware of type coercion** - it can cause unexpected behavior
+
+## 7. Common Pitfalls for Python Developers
+
+### 1. Truthy/Falsy Values
+
+**Python:**
+```python
+# Python falsy values
+if not 0: print("0 is falsy")           # Prints
+if not "": print("Empty string is falsy") # Prints
+if not []: print("Empty list is falsy")   # Prints
+```
+
+**JavaScript:**
+```javascript
+// JavaScript falsy values (more than Python)
+if (!0) console.log("0 is falsy");              // Prints
+if (!"") console.log("Empty string is falsy");   // Prints
+if (!null) console.log("null is falsy");        // Prints
+if (!undefined) console.log("undefined is falsy"); // Prints
+if (!NaN) console.log("NaN is falsy");          // Prints
+```
+
+### 2. Variable Hoisting
+
+```javascript
+// This works in JavaScript (but shouldn't be used)
+console.log(x); // undefined (not an error!)
+var x = 5;
+
+// This is what actually happens:
+// var x;
+// console.log(x); // undefined
+// x = 5;
+```
+
+## 8. Next Steps
+
+In the next module, we'll explore:
+- Functions and their different syntax
+- Arrow functions vs regular functions
+- Scope and closures
+- Function parameters and default values
+
+---
+
+**Practice Exercise**: Try converting some of your Python variable declarations and operations to JavaScript syntax!

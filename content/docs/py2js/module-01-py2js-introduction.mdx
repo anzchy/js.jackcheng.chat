@@ -1,0 +1,318 @@
+---
+title: "Python to JavaScript Introduction"
+description: "An introduction to JavaScript for Python developers, covering the fundamental differences and similarities between the two languages."
+---
+
+## 1. Introduction
+
+### Why Learn JavaScript as a Python Developer?
+
+As a Python developer, learning JavaScript opens up exciting opportunities in web development, full-stack programming, and modern application development. JavaScript's ubiquity in web browsers and its growing presence in server-side development (Node.js) makes it an essential skill for modern developers.
+
+### Key Advantages of This Transition
+
+- **Leverage Existing Knowledge**: Your Python programming concepts translate well to JavaScript
+- **Web Development**: Build interactive user interfaces and dynamic web applications
+- **Full-Stack Capabilities**: Use JavaScript for both frontend and backend development
+- **Large Ecosystem**: Access to vast libraries and frameworks (React, Vue, Express, etc.)
+- **Career Opportunities**: Expand your job market and project possibilities
+
+### How to add code to this docs
+
+This is a test of `PythonEditor.tsx`.
+<PythonEditor title="Hello World program" compare={true}>
+
+```javascript !! js
+function sayhello() {
+  console.log("Hello JS"); 
+};
+sayhello();
+```
+
+```python !! py
+def sayhello():
+    print("Hello Python")
+sayhello()
+```
+</PythonEditor>
+
+
+This is a test of universal editor.
+
+<UniversalEditor
+  title="Universal Editor Example-Javascript"
+  primaryLanguage="python"
+  secondaryLanguage="javascript"
+  compare={true}
+  code={[
+    { lang: 'python', value: 'print("Hello Python")' },
+    { lang: 'javascript', value: 'console.log("Hello JS");' }
+  ]}
+  height={100}
+  showOutput={true}
+/>
+
+This is a test of standalone Python editor.
+
+<UniversalEditor
+  title="Python 代码编辑器"
+  primaryLanguage="python"
+  code={[{ lang: 'python', value: 'print("Hello, World!")' }]}
+  height={60}
+  showOutput={true}
+/>
+
+This is a test of standalone Python editor with multi lines of code.
+
+<UniversalEditor 
+  title="Python 代码编辑器" 
+  primaryLanguage="python" 
+  code={[{ 
+    lang: 'python', 
+    value: `print("Hello, World!")
+numbers = [1, 2, 3, 4, 5]
+doubled = [n * 2 for n in numbers]
+print('Doubled numbers:', doubled)` 
+  }]} 
+  height={200} 
+  showOutput={true} 
+/>
+
+In Python, multi lines of code using indent.
+
+<UniversalEditor 
+  title="Python 代码编辑器" 
+  primaryLanguage="python" 
+  code={[{ 
+    lang: 'python', 
+    value: `def greet(name):
+    print(f"Hello {name}")
+    return f"Welcome, {name}"
+greet("World")` 
+  }]} 
+  height={200} 
+  showOutput={true} 
+/>
+
+This is a test of standalone Javascript editor.
+
+<UniversalEditor
+  title="JavaScript 代码编辑器"
+  primaryLanguage="javascript"
+  code={[{ lang: 'javascript', value: 'console.log("Hello, World!");' }]}
+  height={100}
+  showOutput={true}
+/>
+
+This is a test of standalone Javascript editor, with multi-lines of code.
+
+<UniversalEditor
+  title="JavaScript 代码编辑器"
+  primaryLanguage="javascript"
+  code={[{ 
+    lang: 'javascript', 
+    value: `console.log('Hello from JavaScript!');
+const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map(n => n * 2);
+console.log('Doubled numbers:', doubled);` 
+
+  }]}
+  height={200}
+  showOutput={true}
+/>
+
+
+
+## 2. Language Overview Comparison
+
+### Python Characteristics
+
+<PythonEditor title="Hello World program" compare={true}>
+
+```javascript !! js
+// JavaScript - Flexible, web-oriented syntax
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+
+const result = greet("World");
+console.log(result);
+```
+
+```python !! py
+# Python - Clean, readable syntax
+def greet(name):
+    return f"Hello, {name}!"
+
+result = greet("World")
+print(result)
+```
+</PythonEditor>
+
+
+
+### Key Similarities
+
+1. **Dynamic Typing**: Both languages are dynamically typed. TypeScript is static typing.
+2. **Interpreted Languages**: No compilation step required
+3. **High-Level**: Abstract away low-level memory management
+4. **Multi-Paradigm**: Support procedural, object-oriented, and functional programming
+5. **Extensive Libraries**: Rich ecosystems of third-party packages
+
+### Key Differences
+
+| Aspect | Python | JavaScript |
+|--------|--------|------------|
+| **Syntax** | Indentation-based | Brace-based `{}` |
+| **Variables** | `name = value` | `const/let/var name = value` |
+| **Strings** | `f"Hello {name}"` | `` `Hello ${name}` ``, use backticks |
+| **Arrays/Lists** | `[1, 2, 3]` | `[1, 2, 3]` |
+| **Objects/Dicts** | `{"key": "value"}` | `{key: "value"}`, key is not quoted.|
+| **Functions** | `def func():` | `function func() {}` |
+| **Comments** | `# comment` | `// comment` |
+| **Execution** | Server/Desktop | Browser/Server (Node.js) |
+
+## 3. Development Environment Setup
+
+### Prerequisites
+
+Before starting, ensure you have:
+- A code editor (VS Code, PyCharm, Sublime Text)
+- Basic terminal/command line knowledge
+- Understanding of Python fundamentals
+
+### JavaScript Runtime Options
+
+1. **Browser Console**: Built into every web browser
+2. **Node.js**: Server-side JavaScript runtime
+3. **Online Editors**: CodePen, JSFiddle, Repl.it
+
+### Setting Up Node.js
+
+```bash
+# Install Node.js (similar to installing Python)
+# Download from nodejs.org or use package manager
+
+# Verify installation
+node --version
+npm --version
+```
+
+### Package Management Comparison
+
+| Python | JavaScript |
+|--------|------------|
+| `pip install package` | `npm install package` |
+| `requirements.txt` | `package.json` |
+| `pip list` | `npm list` |
+| `python -m venv env` | `npm init` |
+
+## 4. Coding Style
+
+### Indention
+Javascripit use 2 spaces in default, python use 4 spaces, you can set spaces in VS Code below
+
+
+
+### block
+Javascript use curly brackets, whereas Python use indention to seperate different blocks
+```javascript
+function sayhello() {
+  console.log("Hello"); 
+};
+sayhello();
+```
+
+
+<UniversalEditor
+  title="JavaScript 代码编辑器"
+  primaryLanguage="javascript"
+  code={[{ 
+    lang: 'javascript', 
+    value: `function sayhello() {
+  console.log("Hello"); 
+};
+sayhello();` 
+
+  }]}
+  height={150}
+  showOutput={true}
+/>
+
+
+```python
+def sayhello():
+  print("Hello")
+
+```
+<PythonEditor title="Hello World program" compare={true} height={150}>
+
+```python !! py
+# Hello world in Python
+print("Hello World from Python World")
+```
+</PythonEditor>
+
+### JS use camelCase to name variables, Python use SnakeCase.
+
+```python
+MyName = "Jack"
+
+```
+```javascript
+myName = "Jack";
+
+```
+
+
+
+## 5. Your First Program
+
+<PythonEditor title="Hello World program" compare={true} height={150}>
+
+```javascript !! js
+// Hello world in JS
+console.log("Hello world from JavaScript World");
+```
+
+```python !! py
+# Hello world in Python
+print("Hello World from Python World")
+```
+</PythonEditor>
+
+
+## 6. Learning Path Overview
+
+This course will guide you through JavaScript by building on your Python knowledge:
+
+### Phase 1: Core Language (Modules 1-4)
+- Syntax differences and similarities
+- Variables, data types, and operators
+- Functions and scope
+- Objects and arrays, map, and set
+
+### Phase 2: Advanced Concepts (Modules 5-8)
+- Control flow and error handling
+- Asynchronous programming
+- Modern JavaScript (ES6+)
+- Object-oriented programming
+
+### Phase 3: Web Development (Modules 9-12)
+- DOM manipulation
+- Event handling
+- Frontend frameworks introduction
+- Node.js and backend development
+
+## 6. Next Steps
+
+In the next module, we'll dive deep into JavaScript variables and operators, comparing them directly with Python equivalents. You'll learn about:
+
+- Variable declaration (`let`, `const`, `var`)
+- Data types and type coercion
+- Operators and their behavior
+- String manipulation and template literals
+
+---
+
+**Ready to continue?** Move on to `Module 2: Variables and Operators` to start writing JavaScript code!
