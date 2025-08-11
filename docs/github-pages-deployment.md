@@ -63,7 +63,7 @@ distDir: 'out',
 3. **访问网站**
    - 部署成功后，网站将在以下地址可用：
    - `https://[你的用户名].github.io/[仓库名]/`
-   - 例如：`https://erweixin.github.io/langshift-python-js/`
+   - 例如：`https://erweixin.github.io/js.jackcheng.chat/`
 
 ### 4. 自定义域名（可选）
 
