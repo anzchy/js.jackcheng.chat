@@ -6,7 +6,7 @@ import { getCourses } from '@/lib';
 import { courseStructuredData } from '@/lib/seo-structured-data';
 
 // 支持的语言
-const supportedLanguages: SupportedLanguage[] = ['zh-cn', 'zh-tw', 'en'];
+const supportedLanguages: SupportedLanguage[] = ['en'];
 
 // 生成静态参数
 export async function generateStaticParams() {
@@ -122,4 +122,4 @@ export default async function LanguageHomePage({ params }: { params: Promise<{ l
       structuredData={structuredData}
     />
   );
-} 
+}

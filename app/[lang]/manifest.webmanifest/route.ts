@@ -4,9 +4,7 @@ export const dynamic = 'force-static';
 
 export async function generateStaticParams() {
   return [
-    { lang: 'en' },
-    { lang: 'zh-cn' },
-    { lang: 'zh-tw' }
+    { lang: 'en' }
   ];
 }
 
