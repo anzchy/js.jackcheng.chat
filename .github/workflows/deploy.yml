@@ -41,7 +41,7 @@ jobs:
       run: npm run build
       env:
         CUSTOM_DOMAIN: true
-        NEXT_PUBLIC_SITE_URL: https://js.jackcheng.chat
+        NEXT_PUBLIC_SITE_URL: https://langshift.jackcheng.chat
         
     - name: Export static files for Custom Domain
       run: npm run export
@@ -58,7 +58,7 @@ jobs:
       run: npm run export
       
     - name: Create CNAME file
-      run: echo 'js.jackcheng.chat' > ./out/CNAME
+      run: echo 'langshift.jackcheng.chat' > ./out/CNAME
       
     - name: Create fallback index for GitHub Pages
       run: |

@@ -25,7 +25,7 @@ export function SEOHead({
   lang = 'zh-CN',
   showAlternateLinks = false
 }: SEOHeadProps) {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://langshift.dev'
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://langshift.jackcheng.chat'
   const fullCanonical = canonical ? `${siteUrl}${canonical}` : siteUrl
 
   return (
@@ -98,4 +98,4 @@ export function SEOHead({
       <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
     </Head>
   )
-} 
+}

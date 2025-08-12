@@ -3,10 +3,10 @@ export const defaultStructuredData = {
   "@type": "WebSite",
   "name": "LangShift.dev",
   "description": "编程语言转换学习平台",
-  "url": "https://langshift.dev",
+  "url": "https://langshift.jackcheng.chat",
   "potentialAction": {
     "@type": "SearchAction",
-    "target": "https://langshift.dev/search?q={search_term_string}",
+    "target": "https://langshift.jackcheng.chat/search?q={search_term_string}",
     "query-input": "required name=search_term_string"
   }
 };
@@ -15,8 +15,8 @@ export const organizationStructuredData = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "LangShift.dev",
-  "url": "https://langshift.dev",
-  "logo": "https://langshift.dev/logo.png",
+  "url": "https://langshift.jackcheng.chat",
+  "logo": "https://langshift.jackcheng.chat/logo.png",
   "description": "编程语言转换学习平台",
   "sameAs": [
     "https://github.com/langshift-dev",
@@ -27,7 +27,7 @@ export const organizationStructuredData = {
 export const js2pyCourseData = {
   name: "JavaScript to Python Tutorial",
   description: "Learn Python from a JavaScript developer perspective, focusing on syntax conversion and concept mapping.",
-  url: "https://langshift.dev/docs/js2py",
+  url: "https://langshift.jackcheng.chat/docs/js2py",
   provider: "LangShift.dev",
   courseMode: "online",
   educationalLevel: "Intermediate"
@@ -48,7 +48,7 @@ export const courseStructuredData = (courseData: {
   "provider": {
     "@type": "Organization",
     "name": courseData.provider,
-    "sameAs": "https://langshift.dev"
+    "sameAs": "https://langshift.jackcheng.chat"
   },
   "courseMode": courseData.courseMode,
   "educationalLevel": courseData.educationalLevel,
@@ -78,7 +78,7 @@ export const courseStructuredData = (courseData: {
     "seller": {
       "@type": "Organization",
       "name": courseData.provider,
-      "sameAs": "https://langshift.dev"
+      "sameAs": "https://langshift.jackcheng.chat"
     }
   }
 });

@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   }
 
   const t = getTranslations(supportedLang);
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://langshift.dev';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://langshift.jackcheng.chat';
   const pageUrl = supportedLang === 'zh-cn' ? siteUrl : `${siteUrl}/${supportedLang}`;
 
   return {
@@ -105,7 +105,7 @@ export default async function LanguageHomePage({ params }: { params: Promise<{ l
       "item": courseStructuredData({
         name: course.title,
         description: course.description,
-        url: `https://langshift.dev/${supportedLang}/docs/${course.name}`,
+        url: `https://langshift.jackcheng.chat/${supportedLang}/docs/${course.name}`,
         provider: "LangShift.dev",
         courseMode: "online",
         educationalLevel: course.level === "Advanced" ? "Advanced" : "Intermediate"

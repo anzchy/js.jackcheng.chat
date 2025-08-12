@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next'
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://langshift.dev'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://langshift.jackcheng.chat'
   const currentDate = new Date()
   
   // 基础页面

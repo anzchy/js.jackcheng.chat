@@ -5,7 +5,7 @@ const withMDX = createMDX();
 // 根据部署环境动态设置 basePath
 const isCustomDomain = process.env.CUSTOM_DOMAIN === 'true';
 const isGithubPages = process.env.DEPLOY_TARGET === 'ghpages';
-const basePath = isCustomDomain ? '' : (isGithubPages ? '/langshift' : '/langshift');
+const basePath = isCustomDomain ? '' : (isGithubPages ? '/langshift' : '');
 
 /** @type {import('next').NextConfig} */
 const config = {
@@ -114,7 +114,7 @@ const config = {
   
   // 环境变量
   env: {
-    NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || 'https://langshift.dev',
+    NEXT_PUBLIC_SITE_URL: process.env.NEXT_PUBLIC_SITE_URL || 'https://langshift.jackcheng.chat',
   },
 };
 

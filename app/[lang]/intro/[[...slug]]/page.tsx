@@ -324,7 +324,7 @@ export async function generateMetadata(props: {
 
   // 生成页面关键词
   const keywords = generateKeywordsFromSlug(params.slug, params.lang)
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://langshift.dev'
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://langshift.jackcheng.chat'
   const canonical = params.slug ? `${siteUrl}/${params.lang}/intro/${params.slug.join('/')}` : `${siteUrl}/${params.lang}/intro`
 
   // 优化标题，移除域名

@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next'
 export const dynamic = 'force-static';
 
 export default function manifest(): MetadataRoute.Manifest {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://langshift.dev'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://langshift.jackcheng.chat'
   
   return {
     name: 'LangShift.dev - 编程语言转换学习平台',

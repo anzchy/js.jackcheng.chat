@@ -34,7 +34,7 @@ export default async function Page(props: {
 
   // 获取课程名称
   const courseName = params.slug?.[0] || '';
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://langshift.dev';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://langshift.jackcheng.chat';
   const canonical = `${siteUrl}/${params.lang}/docs/${params.slug?.join('/') || ''}`;
   
   // 课程名称映射
@@ -127,7 +127,7 @@ export async function generateMetadata(props: {
 
   // 生成页面关键词
   const keywords = generateKeywordsFromSlug(params.slug, params.lang)
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://langshift.dev'
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://langshift.jackcheng.chat'
   const canonical = params.slug ? `${siteUrl}/${params.lang}/docs/${params.slug.join('/')}` : `${siteUrl}/${params.lang}/docs`
 
   // 优化标题，移除域名

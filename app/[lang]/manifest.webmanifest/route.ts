@@ -13,7 +13,7 @@ export async function GET(
   { params }: { params: Promise<{ lang: string }> }
 ) {
   const lang = (await params).lang;
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://langshift.dev';
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://langshift.jackcheng.chat';
   
   // 语言配置
   const langConfig = {

@@ -26,7 +26,7 @@ export function SEODocPage({
   author = 'LangShift.dev'
 }: SEODocPageProps) {
   const pathname = usePathname();
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://langshift.dev';
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://langshift.jackcheng.chat';
   const canonical = `${siteUrl}${pathname}`;
   
   // 生成面包屑结构化数据
@@ -150,4 +150,4 @@ export function BreadcrumbNav({
       ))}
     </nav>
   );
-} 
+}
