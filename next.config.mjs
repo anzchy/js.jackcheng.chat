@@ -4,7 +4,8 @@ const withMDX = createMDX();
 
 // 根据部署环境动态设置 basePath
 const isCustomDomain = process.env.CUSTOM_DOMAIN === 'true';
-const basePath = isCustomDomain ? '' : '/langshift';
+const isGithubPages = process.env.DEPLOY_TARGET === 'ghpages';
+const basePath = isCustomDomain ? '' : (isGithubPages ? '/langshift' : '/langshift');
 
 /** @type {import('next').NextConfig} */
 const config = {

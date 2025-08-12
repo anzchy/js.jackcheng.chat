@@ -37,17 +37,35 @@ jobs:
     - name: Install dependencies
       run: npm install
       
-    - name: Build
+    - name: Build for Custom Domain
       run: npm run build
       env:
         CUSTOM_DOMAIN: true
         NEXT_PUBLIC_SITE_URL: https://js.jackcheng.chat
         
-    - name: Export static files
+    - name: Export static files for Custom Domain
+      run: npm run export
+      
+    - name: Build for GitHub Pages fallback
+      run: |
+        rm -rf out
+        npm run build
+      env:
+        DEPLOY_TARGET: ghpages
+        NEXT_PUBLIC_SITE_URL: https://anzchy.github.io/langshift
+        
+    - name: Export static files for GitHub Pages fallback
       run: npm run export
       
     - name: Create CNAME file
       run: echo 'js.jackcheng.chat' > ./out/CNAME
+      
+    - name: Create fallback index for GitHub Pages
+      run: |
+        mkdir -p ./out/langshift
+        cp -r ./out/* ./out/langshift/ 2>/dev/null || true
+        # Remove CNAME from subdirectory to avoid conflicts
+        rm -f ./out/langshift/CNAME
       
     - name: Setup Pages
       uses: actions/configure-pages@v4
