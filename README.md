@@ -188,19 +188,16 @@ Here is what it looks like in web browser.
 #### This is a test of `PythonEditor.tsx`.
 
 ````python
-<PythonEditor title="Hello World program" compare={true}>
+<PythonEditor title="Hello World program" compare={true} height={150}>
 
 ```javascript !! js
-function sayhello() {
-  console.log("Hello JS"); 
-};
-sayhello();
+// Hello world in JS
+console.log("Hello world from JavaScript World");
 ```
 
 ```python !! py
-def sayhello():
-    print("Hello Python")
-sayhello()
+# Hello world in Python
+print("Hello World from Python World")
 ```
 </PythonEditor>
 ````
@@ -294,7 +291,7 @@ This is a test of standalone Javascript editor.
 <UniversalEditor
   title="JavaScript 代码编辑器"
   primaryLanguage="javascript"
-  code={[{ lang: 'javascript', value: 'console.log("Hello, World!");' }]}
+  code={[{ lang: 'javascript', value: `console.log("Hello, World!");` }]}
   height={60}
   showOutput={true}
 />

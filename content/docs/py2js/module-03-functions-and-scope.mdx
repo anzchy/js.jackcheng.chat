@@ -2,3 +2,72 @@
 title: "functions-and-scope"
 description: "Learn JavaScript functions and scopes (block-scoped, function-scoped)"
 ---
+
+## Funtion and Scope
+
+When defining variables, `let` and `const` are block-scoped, but `var` is function-scoped.
+
+<UniversalEditor
+  title="JavaScript 代码编辑器"
+  primaryLanguage="javascript"
+  code={[{ 
+    lang: 'javascript', 
+    value: `function callX(){
+	    let x = 10;
+	    const name = "Jack";
+	    var thing = "Chair";
+	    }
+	    console.log(x); // will cause an error
+	    console.log(name); // will cause an error
+	    console.log(thing); // will print successfully.
+    ` 
+
+    }]}
+  height={60}
+  showOutput={true}
+/>
+
+
+## arrow functions
+
+arrow functions in JavaScript is similar to lambda expressions in Python.
+arrow function is usually used in combination with map/filter/reduce methods.
+
+### map method
+
+<PythonEditor title="arrow function vs lambda expressions" compare={true} height={150}>
+
+```javascript !! js
+const nums = [1, 2, 3, 4];
+const squares = nums.map(x => x * x);
+console.log(squares);
+```
+
+```python !! py
+# similar expression in python
+nums = [1, 2, 3, 4]
+squares = list(map(lambda x: x**2, nums))
+print(squares)
+```
+</PythonEditor>
+
+### filter method
+
+<PythonEditor title="filter method" compare={true} height={150}>
+
+```javascript !! js
+// arrow function + filter method
+const nums = [1, 2, 3, 4];
+const evens = nums.filter(x => x % 2 === 0);
+console.log(evens);
+```
+
+```python !! py
+# lambda expression + filter method
+nums = [1, 2, 3, 4]
+evens = list(filter(lambda x: x % 2 == 0, nums))
+print(evens)
+
+```
+</PythonEditor>
+
